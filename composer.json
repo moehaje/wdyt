@@ -1,10 +1,13 @@
 {
-    "name": "mohammedhaje/wdyt",
-    "authors": [
-        {
-            "name": "Moe Haje",
-            "email": "91034104+moehaje@users.noreply.github.com"
-        }
-    ],
+    "name": "moehaje/wdyt",
+    "description": "A voting application for teams",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        },
+        "files": ["Core/functions.php"]
+    },
     "require": {}
 }
