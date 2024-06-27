@@ -3,12 +3,10 @@
 @use '../globals/sizes' as s;
 @use '../globals/styles' as st;
 
-.buttons{
-    .button{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.button, .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .text{
         padding: u.em(14);
         @include st.border();
@@ -17,7 +15,7 @@
         padding: u.em(15) u.em(38);
         @include st.border();
     }
-    .icon-s{
+    .icon{
         max-width: u.em(46);
         max-height: u.em(46);
         padding: 14px;
@@ -30,5 +28,32 @@
     }
     .light-border{
         @include st.border-light();
+    }
+}
+
+.large-btn{
+    width: 100%;
+    padding: s.$size-01 s.$size-03 s.$size-01 s.$size-01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include st.border-light();
+    .left{
+        display: flex;
+        align-items: center;
+        gap: s.$size-01;
+        .show{
+            padding: s.$size-02;
+            color: c.$primary-white;
+            background-color: c.$primary-faded-black;
+            border-radius: s.$size-08;
+            .frame{
+                width: s.$size-03;
+                height: s.$size-03;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }

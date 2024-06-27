@@ -36,11 +36,14 @@
         input, textarea{
             width: 100%;
             padding: s.$size-02 u.em(14);
+            font-size: u.rem(14);
+            font-family: u.$font;
             color: c.$primary-faded-black;
             background-color: c.$primary-light-blue-og;
             @include st.border-light();
             &::placeholder{
                 font-family: u.$font;
+                font-size: u.rem(14);
                 color: c.$primary-faded-black;
             }
             &:focus{
@@ -58,6 +61,8 @@
         }
         input[type=submit]{
             cursor: pointer;
+            font-size: u.rem(14);
+            font-weight: 500;
             color: c.$primary-white;
             background-color: c.$primary-faded-black;
         }
