@@ -2,4 +2,10 @@
 
 namespace Http\Controllers;
 
-dd('This is Home');
+use Core\App;
+
+$ideas = null;
+
+view('home.view.php', [
+    'ideas' => $ideas
+]);
