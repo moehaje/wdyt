@@ -1,0 +1,72 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.flex{
+    display: flex;
+}
+
+.block{
+    display: block;
+}
+
+.grid{
+    display: grid;
+}
+
+.column{
+    flex-flow: column;
+}
+
+.row{
+    flex-flow: row;
+}
+
+.jc-sb{
+    justify-content: space-between;
+}
+
+.jc-c{
+    justify-content: center;
+}
+
+.ai-c{
+    align-items: center;
+}
+
+.ac-c{
+    align-content: center;
+}
+
+.gap-1{
+    gap: s.$size-01;
+}
+
+.gap-2{
+    gap: s.$size-02;
+}
+
+.gap-3{
+    gap: s.$size-03;
+}
+
+.gap-4{
+    gap: s.$size-04;
+}
+
+.gap-5{
+    gap: s.$size-05;
+}
+
+.gap-6{
+    gap: s.$size-06;
+}
+
+.gap-7{
+    gap: s.$size-07;
+}
+
+.gap-8{
+    gap: s.$size-08;
+}

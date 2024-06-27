@@ -1,0 +1,65 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: s.$size-02;
+    h4{
+        padding-inline-start: s.$size-01;
+    }
+}
+
+.add-form{
+    display: flex;
+    flex-direction: column;
+    gap: u.em(80);
+    padding: s.$size-02;
+    border-radius: s.$size-04;
+    background-color: c.$primary-light-blue-og;
+    .heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        gap: s.$size-02;
+        .type-inputs{
+            display: flex;
+            flex-direction: column;
+            gap: u.em(4);
+        }
+        input, textarea{
+            width: 100%;
+            padding: s.$size-02 u.em(14);
+            color: c.$primary-faded-black;
+            background-color: c.$primary-light-blue-og;
+            @include st.border-light();
+            &::placeholder{
+                font-family: u.$font;
+                color: c.$primary-faded-black;
+            }
+            &:focus{
+                outline: 1px solid c.$primary-faded-black;
+            }
+        }
+        textarea{
+            height: u.em(160);
+            max-height: u.em(240);
+            resize: none;
+            border-radius: s.$size-03;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        input[type=submit]{
+            cursor: pointer;
+            color: c.$primary-white;
+            background-color: c.$primary-faded-black;
+        }
+    }
+}

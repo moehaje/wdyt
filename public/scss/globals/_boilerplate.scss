@@ -1,0 +1,47 @@
+@use '../util/' as u;
+@use 'colors' as c;
+@use 'sizes' as s; 
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    color: var(--faded-black);
+    background-color: c.$primary-blue-bg;
+    user-select: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: u.em(16) 0;
+    margin: 0 auto;
+    font-family: u.$font;
+    overflow: hidden;
+}
+
+header{
+    margin: 0 auto;
+    width: min(calc(100% - 64px), u.em(1376));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main{
+    margin: u.em(80) auto 0;
+    width: min(calc(100% - 64px), u.em(1376));
+    display: flex;
+    align-items: start;
+    gap: s.$size-02;
+    @include u.breakpoint-down(small){
+        flex-direction: column;
+        gap: s.$size-04;
+    }
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}

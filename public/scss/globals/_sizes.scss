@@ -1,0 +1,23 @@
+@use '../util' as u;
+
+/*
+8       XXS       base       01
+16      XS       x-two       02
+24      S        x-three     03
+32      M        x-four      04
+40      L        x-five      05
+48      XL       x-six       06
+56      XXL      x-seven     07
+64      XXXL     x-eight     08
+*/
+
+$base: 8;
+
+$size-01: u.em($base);
+$size-02: u.em($base * 2);
+$size-03: u.em($base * 3);
+$size-04: u.em($base * 4);
+$size-05: u.em($base * 5);
+$size-06: u.em($base * 6);
+$size-07: u.em($base * 7);
+$size-08: u.em($base * 8);

@@ -1,0 +1,36 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.br-1{
+    border-radius: s.$size-01;
+}
+
+.br-2{
+    border-radius: s.$size-02;
+}
+
+.br-3{
+    border-radius: s.$size-03;
+}
+
+.br-4{
+    border-radius: s.$size-04;
+}
+
+.br-5{
+    border-radius: s.$size-05;
+}
+
+.br-6{
+    border-radius: s.$size-06;
+}
+
+.br-7{
+    border-radius: s.$size-07;
+}
+
+.br-8{
+    border-radius: s.$size-08;
+}

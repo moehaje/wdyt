@@ -1,0 +1,34 @@
+@use '../util' as u;
+@use '../globals/colors' as c;
+@use '../globals/sizes' as s;
+@use '../globals/styles' as st;
+
+.buttons{
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .text{
+        padding: u.em(14);
+        @include st.border();
+    }
+    .text-wide{
+        padding: u.em(15) u.em(38);
+        @include st.border();
+    }
+    .icon-s{
+        max-width: u.em(46);
+        max-height: u.em(46);
+        padding: 14px;
+        @include st.border();
+    }
+    .fill{
+        border: none;
+        color: c.$primary-white;
+        background-color: c.$primary-faded-black;
+    }
+    .light-border{
+        @include st.border-light();
+    }
+}

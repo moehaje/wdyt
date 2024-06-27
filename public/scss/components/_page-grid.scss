@@ -1,0 +1,49 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.main-content{
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: s.$size-08;
+    @include u.breakpoint-down(medium){
+        flex-basis: 60%;
+        gap: s.$size-03;
+    }
+}
+
+.aside{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: u.em(80);
+    .content{
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+        gap: s.$size-04;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-block-end: u.em(160);
+        &::-webkit-scrollbar{
+            display: none;
+        }
+        @include u.breakpoint-down(small){
+            display: none;
+        }
+    }
+    @include u.breakpoint-down(medium){
+        flex-basis: 40%;
+    }
+}
+
+.company-profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .buttons{
+        display: flex;
+    }
+}

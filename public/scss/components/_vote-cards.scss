@@ -1,0 +1,70 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.vote-cards{
+    height: 75vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - s.$size-01), 1fr));
+    grid-auto-rows: 0;
+    gap: s.$size-01;
+    grid-auto-flow: dense;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: s.$size-04;
+    padding-block-end: s.$size-08;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    @include u.breakpoint-down(medium){
+        grid-template-columns: 1fr;
+    }
+    @include u.breakpoint-down(small){
+        padding-block-end: u.em(160);
+    }
+}
+
+.vote-card{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: u.em(80);
+    padding: s.$size-02;
+    border-radius: s.$size-04;
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .pic{
+            width: u.em(46);
+            height: u.em(46);
+            @include st.border();
+            background-color: c.$primary-faded-black;
+        }
+        .buttons{
+            display: flex;
+        }
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: s.$size-02;
+        .text{
+            display: flex;
+            flex-direction: column;
+            gap: u.em(4);
+            .opacity-50{
+                opacity: 0.5;
+            }
+        }
+        .center{
+            align-items: center;
+        }
+    }
+    &:hover{
+        transform: scale(1.005);
+        transition: transform .75 ease-in-out;
+    }
+}

@@ -1,0 +1,43 @@
+$primary-blue-bg: rgba(235,241,249,1);
+$primary-light-blue-og: rgba(243,246,251,1);
+$primary-white: rgba(255,255,255,1);
+$primary-faded-black: rgba(34,34,34,1);
+$tone-sunny-lime: rgba(219,251,161,1);
+$tone-pink-crepe: rgba(253,197,200,1);
+$tone-heather: rgba(206,197,225,1);
+$tone-light-teal: rgba(150,216,208,1);
+$tone-sky-blue: rgba(116,209,255,1);
+
+$wdy-gradient: linear-gradient(to bottom, $tone-sunny-lime 0%,$tone-light-teal 24.5%,$tone-sky-blue 50%,$tone-heather 75%,$tone-pink-crepe 100%);
+$wdy-angular-gradient: conic-gradient($tone-sunny-lime 0.6%,$tone-light-teal 24.5%,$tone-sky-blue 50%,$tone-heather 75%,$tone-pink-crepe 99.99%);
+
+$border: $primary-faded-black;
+$border-light: rgba(34,34,34,0.250);
+
+.sunny-lime{
+    color: $primary-faded-black;
+    background-color: $tone-sunny-lime;
+}
+
+.pink-crepe{
+    color: $primary-faded-black;
+    background-color: $tone-pink-crepe;
+}
+
+.heather{
+    color: $primary-faded-black;
+    background-color: $tone-heather;
+}
+
+.light-teal{
+    color: $primary-faded-black;
+    background-color: $tone-light-teal;
+}
+
+.sky-blue{
+    color: $primary-faded-black;
+    background-color: $tone-sky-blue;
+}
+
+$color-wdy-gradient: linear-gradient(to bottom, rgba(219,251,161,0.859) 0%,rgba(150,216,208,0.588) 24.5%,rgba(116,209,255,0.455) 50%,rgba(206,197,225,0.808) 75%,rgba(253,197,200,0.992) 100%);
+$color-wdy-angular-gradient: conic-gradient(rgba(219,251,161,0.859) 0.6%,rgba(150,216,208,0.588) 24.5%,rgba(116,209,255,0.455) 50%,rgba(206,197,225,0.808) 75%,rgba(253,197,200,0.992) 99.99%);

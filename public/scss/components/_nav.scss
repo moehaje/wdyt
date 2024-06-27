@@ -1,0 +1,90 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: s.$size-01;
+    color: c.$primary-faded-black;
+}
+
+nav{
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: s.$size-01;
+    gap: s.$size-01;
+    border-radius: s.$size-08;
+    background-color: rgba(243,246,251,0.500);
+    @include st.effect-blur-shadow();
+    .menu-item{
+        display: flex;
+        align-items: center;
+        gap: s.$size-01;
+        padding: u.em(14);
+        background-color: c.$primary-white;
+        border-radius: s.$size-08;
+        p{
+            display: none;
+            font-size: u.rem(14);
+            font-weight: 600;
+        }
+        svg{
+            .fill{
+                fill: c.$primary-faded-black;
+            }
+            path{
+                stroke: c.$primary-faded-black;
+            }
+        }
+    }
+    .active{
+        background-color: c.$primary-faded-black;
+        p{
+            display: block;
+            color: c.$primary-white;
+        }
+        svg{
+            .fill{
+                fill: c.$primary-white;
+            }
+            path{
+                stroke: c.$primary-white;
+            }
+        }
+    }
+    @include u.breakpoint-down(small){
+        position: fixed;
+        bottom: 2.5%;
+        left: 50%;
+        transform: translate(-50%, -2.5%);
+        z-index: 10;
+        display: flex;
+    }
+    @include u.breakpoint-dynamic(400px){
+        .menu-item{
+            p{
+                display: none;
+            }
+        }
+    }
+}
+
+.s-nav{
+    display: none;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: s.$size-01;
+    .pic{
+        width: u.em(48);
+        height: u.em(48);
+        border-radius: s.$size-08;
+        background-color: c.$primary-faded-black;
+    }
+}

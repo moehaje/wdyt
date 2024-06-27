@@ -1,0 +1,20 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.a-block{
+    display: block;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img{
+        flex-shrink: 1;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}

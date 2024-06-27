@@ -1,0 +1,252 @@
+@use '../util' as u;
+@use 'sizes' as s;
+@use 'colors' as c;
+@use 'styles' as st;
+
+.to-ideas{
+    width: 100%;
+    padding: s.$size-01 s.$size-03 s.$size-01 s.$size-01;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include st.border-light();
+    .left{
+        display: flex;
+        align-items: center;
+        gap: s.$size-01;
+        .show{
+            padding: s.$size-02;
+            color: c.$primary-white;
+            background-color: c.$primary-faded-black;
+            border-radius: s.$size-08;
+            .frame{
+                width: s.$size-03;
+                height: s.$size-03;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.burger-menu{
+    display: none;
+    position: fixed;
+    bottom: -100%;
+    left: 4%;
+    width: 90vw;
+    transform: scale(1.1);
+    border-radius: s.$size-01 s.$size-01 0 0;
+    padding: s.$size-03 s.$size-03 s.$size-02;
+    box-shadow: 0 0 15px hsla(0, 0%, 13%, 0.3);
+    background-color: var(--off-white);
+    transition: opacity ease-in-out .4s, 
+                transform ease-in-out .4s,
+                outline linear 0s,
+                bottom ease-in-out .4s;
+    .close-btn{
+        position: absolute;
+        top: u.em(15);
+        right: u.em(24);
+        cursor: pointer;
+    }
+    .menu-items{
+        padding: s.$size-02 0;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.125);
+        .menu-item{
+            display: flex;
+            width: 98%;
+            gap: s.$size-02;
+            padding: s.$size-02;
+            transition: .25s ease-in-out;
+            border-radius: s.$size-01;
+        }
+        .menu-item:hover{
+            background-color: var(--hover-black);
+        }
+    }
+    .search-input{
+        padding: s.$size-01 s.$size-01 s.$size-01 s.$size-02;
+        margin-block-start: s.$size-01;
+        width: 100%;
+        border: none;
+        background-color: var(--off-white);
+    }
+    .search-input::placeholder{
+        color: hsla(0, 0%, 0%, 0.3);
+    }
+    @include u.breakpoint-down(small){
+        display: flex;
+        flex-flow: column;
+    }
+}
+
+.sign-up-form{
+    position: fixed;
+    top: -1000%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%) scale(1.25);
+    width: min(90%, u.em(520));
+    padding: u.em(24);
+    display: flex;
+    flex-flow: column;
+    border-radius: u.em(8);
+    background: var(--off-white);
+    box-shadow: 0 0 15px hsla(0, 0%, 13%, 0.3);
+    opacity: 0;
+    transition: opacity ease-in-out .25s, 
+                transform ease-in-out .25s;
+    .close-btn{
+        position: absolute;
+        top: u.em(12);
+        left: u.em(12);
+        cursor: pointer;
+    }
+    .heading{
+        width: min(100%, u.em(360));
+        display: flex;
+        flex-flow: column;
+        align-self: center;
+        text-align: center;
+        gap: u.em(16);
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-self: center;
+            padding: u.em(12);
+            background: var(--faded-black);
+            border-radius: u.em(8);
+        }
+    }
+    form{
+        width: min(100%, u.em(360));
+        margin: 0 auto;
+        padding: u.em(16) 0;
+        display: flex;
+        flex-flow: column;
+        gap: u.em(8);
+        .input-field{
+            display: flex;
+            flex-flow: column;
+            gap: u.em(4);
+            width: 100%;
+            input{
+                width: 100%;
+                padding: u.em(8) u.em(12) u.em(8) u.em(32);
+                background: #FFFEFB;
+                border-radius: u.em(8);
+                border: u.em(1) solid #D9D9D9;
+            }
+            .icon{
+                position: absolute;
+                top: u.em(12);
+                left: u.em(7.5);
+                z-index: 10;
+            }
+            small{
+                opacity: 0;
+                margin-top: -24px;
+                transition: all ease-in-out .5s;
+                padding-inline-start: u.em(4);
+                // text-transform: capitalize;
+            }
+            small::first-letter{
+                text-transform: capitalize;
+            }
+            input[type="submit"]{
+                margin-block-start: u.em(8);
+                border: none;
+                color: var(--off-white);
+                background-color: var(--faded-black);
+                line-height: u.em(32);
+                box-shadow: 0 2px 0 #00000020;
+                cursor: pointer;
+            }
+        }
+        .error-field{
+            input{
+                color: var(--terracotta-orange);
+                border: u.em(1) solid var(--terracotta-orange);
+            }
+            input::placeholder{
+                color: var(--terracotta-orange);
+            }
+            .icon{
+                top: u.em(11);
+                svg{
+                    path{
+                        fill: var(--terracotta-orange);
+                    }
+                }
+            }
+            small{
+                opacity: 1;
+                margin-top: 0;
+                color: var(--terracotta-orange);
+            }
+        }
+        .user-field{
+            position: relative;
+        }
+        .email-field{
+            position: relative;
+        }
+        .password-field{
+            position: relative;
+        }
+        .alt-option{
+            text-align: center;
+            font-size: u.rem(12);
+            color: hsla(0, 0%, 0%, 0.25);
+            list-style: none;
+            a{
+                text-decoration: underline;
+                color: var(--faded-black);
+            }
+        }
+    }
+}
+
+.popup-open{
+    overflow: hidden;
+    pointer-events: none;
+    .popup{
+        opacity: 1;
+        top: 0;
+        transform: translateX(-50%) translateY(50%) scale(1);
+        outline: u.em(999) solid hsla(45, 31%, 95%, 0.6);
+        pointer-events: auto;
+    }
+    .burger-menu-active{
+        opacity: 1;
+        bottom: 0;
+        transform: scale(1);
+        outline: u.em(99999) solid hsla(45, 31%, 95%, 0.6);
+        pointer-events: auto;
+    }
+}

@@ -1,0 +1,88 @@
+@use '../util' as u;
+
+.heading {
+	font-size: u.rem(27);
+	font-weight: 600;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: none;
+}
+.body {
+	font-size: u.rem(18);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 130%;
+	text-decoration: none;
+	text-transform: none;
+}
+.title{
+	font-size: u.rem(16);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: none;
+}
+.subtitle{
+	font-size: u.rem(12);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 130%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.menu-item-text{
+	font-size: u.em(14);
+	font-weight: 500;
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: none;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: hsla(0, 0%, 0%, 0.878);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.s-bold{
+    font-weight: 600;
+}
+
+.medium{
+    font-weight: 500;
+}
+
+.underline{
+    text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+@use '../util' as u;
+@use '../globals/sizes' as s;
+@use '../globals/colors' as c;
+@use '../globals/styles' as st;
+
+.ta-r{
+    text-align: right;
+}
+
+.ta-c{
+    text-align: center;
+}
+
+.ta-l{
+    text-align: left;
+}
