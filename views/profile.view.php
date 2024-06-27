@@ -1,4 +1,4 @@
-<?php $title = 'Home - WDY' ?>
+<?php $title = 'Home — WDY' ?>
 
 <?php ob_start() ?>
 
