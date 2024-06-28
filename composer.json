@@ -1,11 +1,12 @@
 {
-    "name": "moehaje/wdyt",
+    "name": "moehaje/wdy",
     "description": "A voting application for teams",
     "type": "project",
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
-            "Http\\": "Http/"
+            "Http\\": "Http/",
+            "Models\\": "Models/"
         },
         "files": ["Core/functions.php"]
     },
