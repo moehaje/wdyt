@@ -33,7 +33,8 @@ class Database {
     }
 
     public function find(){
-        return $this->statement->fetch();
+        $result = $this->statement->fetch();
+        return $result !== false ? $result : false;
     }
 
     public function findOrFail(){

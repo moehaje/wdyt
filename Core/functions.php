@@ -26,13 +26,15 @@ function authorized($condition, $status = Response::FORBIDDEN){
     }
 }
 
-function base_path($path){
-    return BASE_PATH . $path;
+function base_path($path) {
+    return dirname(__DIR__) . '/' . $path;
 }
-function view($path, $attributes = []){
+
+function view($path, $attributes = []) {
     extract($attributes);
 
-    require base_path('views/' . $path);
+    require base_path("views/{$path}");
+
 }
 
 function redirect($path){
