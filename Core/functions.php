@@ -45,3 +45,10 @@ function redirect($path){
 function old($key, $default = '') {
     return Core\Session::get('old')[$key] ?? $default;
 }
+
+function auth($property = null) {
+    if ($property) {
+        return \Core\Authenticator::user()[$property] ?? null;
+    }
+    return \Core\Authenticator::user();
+}

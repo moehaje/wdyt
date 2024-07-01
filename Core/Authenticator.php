@@ -2,13 +2,12 @@
 
 namespace Core;
 
+use Models\Member;
+
 class Authenticator {
     public function attempt($email, $password) {
         // Find the user.
-        $user = App::resolve('Core\Database')
-            ->query('select * from users where email = :email',
-            ['email' => $email
-        ])->find();
+        $user = Member::findByEmail($email);
 
         // Attempt the user.
         if ($user) {
@@ -26,9 +25,15 @@ class Authenticator {
 
     }
 
-    public function login($user) {
+    public static function login($user) {
         $_SESSION['user'] = [
+            'id' => $user['id'],
             'email' => $user['email'],
+            'username' => $user['username'],
+            'fullname' => $user['fullname'],
+            'job_title' => $user['job_title'],
+            'role' => $user['role'],
+            'teamId' => $user['teamId']
         ];
 
         // regenerate the id of the session to make having fully new session when login after logout!
@@ -37,5 +42,17 @@ class Authenticator {
 
     public function logout() {
         Session::destroy();
+    }
+
+    public static function check() {
+        return isset($_SESSION['user']);
+    }
+
+    public static function user() {
+        return $_SESSION['user'] ?? null;
+    }
+
+    public static function id() {
+        return static::user()['id'] ?? null;
     }
 }
