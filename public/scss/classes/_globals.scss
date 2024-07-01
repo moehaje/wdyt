@@ -22,3 +22,10 @@
 .opacity-50{
     opacity: 0.5;
 }
+
+.pic{
+    width: u.em(46);
+    height: u.em(46);
+    border-radius: s.$size-08;
+    // background-color: c.$primary-faded-black;
+}

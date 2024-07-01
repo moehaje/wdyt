@@ -77,10 +77,4 @@ nav{
     display: flex;
     align-items: center;
     gap: s.$size-01;
-    .pic{
-        width: u.em(48);
-        height: u.em(48);
-        border-radius: s.$size-08;
-        background-color: c.$primary-faded-black;
-    }
 }

@@ -2,6 +2,12 @@
 
 <?php ob_start() ?>
 
+<?php
+use Models\Team;
+
+$teamProfilePicture = Team::getProfilePicture(auth('teamId'));
+?>
+
 <div class="aside">
     <h1 class="heading">Last Engagements</h1>
     <div class="content">
@@ -51,8 +57,8 @@
 <div class="main-content">
     <div class="company-profile">
         <div class="profile">
-            <div class="pic">
-
+            <div class="pic img">
+                <img src="/assets/imgs/<?= $teamProfilePicture ?>" alt="Team Profile Picture">
             </div>
             <div class="title">
                 <p class="title">Apple</p>

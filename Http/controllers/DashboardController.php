@@ -6,6 +6,6 @@ use Core\App;
 
 $ideas = null;
 
-view('home.view.php', [
+view('dashboard.view.php', [
     'ideas' => $ideas
 ]);
